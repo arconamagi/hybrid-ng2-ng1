@@ -1,3 +1,6 @@
+/**
+ * A root component for the application. It just wraps Angular 2 component.
+ */
 function ng1appRoot() {
   return {
     restrict: 'E',

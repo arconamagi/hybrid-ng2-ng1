@@ -1,23 +1,36 @@
+/**
+ * A form to create or modify provided person info.
+ * Is used from Angular 2 `AppComponent` component.
+ */
 function ng1appForm(dataFormat) {
   return {
     restrict: 'E',
     templateUrl: '/src/ng1/form.directive.html',
     scope: {
-      'editingPerson': '=',
+      'person': '=',
       'onApply': '&',
       'onCancel': '&'
     },
     link: function (scope, elem, attrs) {
       scope.dataFormat = dataFormat;
 
+      /**
+       * Checks if the form should be visible
+       */
       scope.isVisible = function () {
-        return (scope.editingPerson !== null);
+        return (scope.person !== null);
       };
 
+      /**
+       * 'Apply' button handler
+       */
       scope.apply = function () {
         scope.onApply();
       };
 
+      /**
+       * 'Cancel' button handler
+       */
       scope.cancel = function () {
         if (scope.onCancel) {
           scope.onCancel();

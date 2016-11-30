@@ -14,6 +14,9 @@ import { PersonsService } from "./ng2/persons.service";
 import { OptionsService } from "./ng2/options.service";
 import { SyncService } from "./ng2/sync.service";
 
+/*
+ * Create upgradeAdapter
+ */
 export const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter(
   forwardRef(() => Ng2AppModule));
 
@@ -29,6 +32,9 @@ angular.module('ng1app')
  */
 upgradeAdapter.upgradeNg1Provider('dataFormat');
 
+/*
+ * Define a root module with upgraded service and component
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +53,7 @@ upgradeAdapter.upgradeNg1Provider('dataFormat');
 })
 class Ng2AppModule {
   constructor(syncService: SyncService) {
+    // Note: SyncService should be injected here in order to get it working
   }
   ngDoBootstrap() {
   }

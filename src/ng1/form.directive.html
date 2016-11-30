@@ -5,22 +5,23 @@
 <div ng-if="isVisible()" class="row">
   <form ng-submit="apply()">
     <h5 class="col-xs-12">
-      <span ng-hide="editingPerson.id!==0">(creating a new record)</span>
-      <span ng-hide="editingPerson.id===0">(editing record with id {{editingPerson.id}})</span>
+      <span ng-hide="person.id !== 0">(creating a new record)</span>
+      <span ng-hide="person.id === 0">(editing record with id {{person.id}})</span>
     </h5>
     <div class="col-sm-3">
       <input type="text" class="form-control"
-             ng-model="editingPerson.firstName"
+             ng-model="person.firstName"
              placeholder="First Name">
     </div>
     <div class="col-sm-3">
       <input type="text" class="form-control"
-             ng-model="editingPerson.lastName"
+             ng-model="person.lastName"
              placeholder="Last Name">
     </div>
 
     <button class="btn btn-primary">Apply</button>
-    <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+    <button type="button" class="btn btn-default"
+            ng-click="cancel()">Cancel</button>
   </form>
 
 </div>

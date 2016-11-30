@@ -1,3 +1,7 @@
+/**
+ * A simple service which stores `format` variable.
+ * It is synchronized with Angular 2 `OptionsService` service (check `SyncService`).
+ */
 function dataFormat() {
   this.validValues = [
     'first_last', 'last_first'
