@@ -35,3 +35,11 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+.idea
+
+# Generated src
+src/ng2/**/*.js
+src/ng2/**/*.js.map
+src/*.js
+src/*.js.map

@@ -1,0 +1,46 @@
+<div class="row">
+  <h4>ng1 form</h4>
+</div>
+
+<div ng-if="isVisible()" class="row">
+  <form ng-submit="apply()">
+    <h5 class="col-xs-12">
+      <span ng-hide="editingPerson.id!==0">(creating a new record)</span>
+      <span ng-hide="editingPerson.id===0">(editing record with id {{editingPerson.id}})</span>
+    </h5>
+    <div class="col-sm-3">
+      <input type="text" class="form-control"
+             ng-model="editingPerson.firstName"
+             placeholder="First Name">
+    </div>
+    <div class="col-sm-3">
+      <input type="text" class="form-control"
+             ng-model="editingPerson.lastName"
+             placeholder="Last Name">
+    </div>
+
+    <button class="btn btn-primary">Apply</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+  </form>
+
+</div>
+
+<div class="row">
+  <form>
+    <div class="pull-left">View options: &nbsp;</div>
+    <div class="form-group radio">
+      <label>
+        <input type="radio" name="lastNameFirst"
+               value="first_last"
+               ng-model="dataFormat.format">
+        first + last
+      </label>
+      <label>
+        <input type="radio" name="lastNameFirst"
+               value="last_first"
+               ng-model="dataFormat.format">
+        last + first
+      </label>
+    </div>
+  </form>
+</div>
