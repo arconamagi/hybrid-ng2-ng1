@@ -9,7 +9,8 @@ Notes:
 - `ng1` means Angular 1
 - `ng2` means Angular 2
 
-  
+
+```
     ----------------- 
     | <ng1appRoot>  |
     | ng1 directive |
@@ -32,6 +33,7 @@ Notes:
     | <ng1appForm>  |         |   dataFormat   |
     | ng1 directive |   -->   |   ng1 service  |
     -----------------         ------------------
+```
 
 SyncService is Angular 2 service which synchronizes values between 
 `optionsService` Angular 2 service and `dataFormat` AngularJS service.
